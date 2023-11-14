@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML | Media</title>
+</head>
+<body>
+    <h1>Media</h1>
+    <!--
+        html5에서는 미디어 관련해서 별도의 플러그인 없이 재생이 가능하다.
+    -->
+    <h2>audio</h2>
+    <!-- controls 라는 속성을 추가해야 누를 수 있는 것이 생김 -->
+    <!-- 속성명=속성값 2개가 동일한 경우, 속성값을 생략 가능. -->
+    <!-- 자동재생:autoplay 브라우저마다 실행되는 경우,안되는 경우 있음.-->
+    <!-- 음소거:mute , 반복재생:loop -->
+    <audio src="../sample/audio/major.mp3" 
+    autoplay
+    muted
+    loop
+    controls="controls"></audio>
+
+    <!--오디오/속성 따로지정-->
+    <!--같은 컨텐츠를 여러 확장자로 준비한 경우..디바이스 별로 최적화된 자원을 재생한다-->
+    <audio controls>
+    <source src="../sample/audio/major.mp3">
+    </audio>
+
+    <!--비디오 역시 controls 속성을 부여해야 재생 버튼이 보임-->
+    <h2>video</h2>
+    <video 
+    src="../sample/video/small.mp4"
+    muted 
+    loop
+    poster = "../sample/image/flower5.PNG"
+    controls>
+    </video>
+
+    <!--
+        디바이스 별로 최적화된 자원을 선택 재생.
+        -pc browser : mp4/webm/ogg 순으로 선호
+        -mobile browser : mp4/3gop 순으로 선호
+
+        서버 부하를 줄이기 위해 용량이 큰 동영상 파일은 별도의 미디어 서버나
+        유튜브, vimeo 등을 통해 제공하는 것이 좋다. (위의 링크같이 사용하지 않고..)
+    -->
+    <video>
+        <source src="../sample/video/small.webm" type="video/webm" controls>
+        <source src="../sample/video/small.ogv" type="video/ogg" controls>
+        <source src="../sample/video/small.mp4" type="video/mp4" controls>
+
+    </video>
+</body>
+</html>

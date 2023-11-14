@@ -25,18 +25,47 @@
     <h6>Text</h6>
 
     <!-- 문단 태그 -->
-    <!-- 개행문자,탭문자,공백문자는 모두 공백1개로 처리된다.-->
+    <!-- 
+        개행문자,탭문자,공백문자는 모두 그룹지어 공백1개로 처리된다. 엔터를 수십번 사용해도 공백 1개로 처리된다는 것.
+        공백을 더 주고싶다면 &nbsp;를 사용하자.
+    -->
     <p>
        춥다!!!! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;반갑습니다. </br>
        너무추워~~~~~~~</br>
     </p>
+
+    <!-- 
+        1114 pre 태그 : pre-formatted 개행/탭/공백을 모두 그대로 출력 
+        이클립스 doc (상단에 작성)에서 사용한 그 pre 태그
+    -->
+    <pre style="font-family: 'Courier New',Courier, monospace;">
+        pre 태그 테스트 ,,,
+        내가 아무렇게나 써도 
+        작성한
+        그 
+          대
+            로
+              출력해줌.
+
+    </pre>
+    <!-- pre>code-->
+    <pre>
+        <code>
+            function foo()
+            {
+                console.log('foo');
+            }
+
+        </code>
+    </pre>
 
     <!-- 특수문자 표현&문자-->
     <p>
         &lt;p&gt;&lt;&#47;p&gt;를 "표현"하기
     </p>
 
-    <!-- 수평선 태그 -->
+    <!-- 수평선 태그 <hr> -->
+    <hr>
     <hr>
     <h2>Pharse Tags</h2>
     <!-- 
