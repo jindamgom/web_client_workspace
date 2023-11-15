@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS | HelloCSS</title>
+    <link rel="stylesheet" href="css/01_hellocss.css">
+    <style>
+        /*style 태그 내 유일한 주석..*/
+        /*css를 처리하기 위한 Best Position*/
+        #foo{
+            color: darkcyan;
+            text-decoration: underline;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <h1>HelloCSS</h1>
+    <h2><abbr>CSS</abbr> Cascading Style Sheet</h2>
+
+    <h3>html 페이지에 css를 적용하는 3가지 방법</h3>
+    <!--ol>li*3-->
+    <ol>
+        <!-- 태그에 직접 스타일을 지정하는 건 지양-->
+        <li style="color:coral">inline style 속성</li>
+        <li id="foo">페이지 내 style 태그</li>
+        <li id="bar">외부 css파일 링크</li>
+
+    </ol>
+</body>
+</html>

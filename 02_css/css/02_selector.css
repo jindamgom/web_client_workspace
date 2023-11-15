@@ -1,0 +1,135 @@
+/*태그 선택자*/
+/* li{
+    background-color: bisque;
+}
+ul{
+    background-color: cadetblue;
+} */
+
+/* 아이디 선택자 */
+#foo1{
+    font-weight: bold;
+}
+
+/* 클래스 선택자 */
+.group1{
+    color:blue;
+}
+.group2{
+    color:red;
+}
+.group1.group2{
+    color:blueviolet;
+}
+
+/* 속성 선택자 : 타이틀 속성이 있다면 커서가 포인터로. */
+[title]{
+    cursor:pointer;
+}
+[title=안녕2]{
+    text-decoration-line: underline;
+}
+
+/* 혼용 */
+li#foo3.group2{
+    background-color: gray;
+}
+
+/* 복수개  : , 기준으로 여러개 사용 가능*/
+#foo4,#foo5{
+    color:darkkhaki;
+}
+
+/* 자식 선택자 */
+#parent > h4{
+    color:tomato;
+}
+
+/* 후손 선택자 */
+#parent h4 {
+    color:tomato;
+}
+#parent > ul li{
+    color:blue;
+}
+#parent #child >ul li{
+    color:blue;
+}
+
+/* 형제 선택자 */
+/* 다음 형제 요소 하나 즉, p1 다음의 p태그 값이 바뀜! */
+#p1 + p {
+    color:hotpink
+}
+
+/* 다음 형제 요소 모두.. : p태그만 바꾸는거라 pre태그는 css 적용되지 않음 */
+/* 이전 선택은 없다...외부 라이브러리 사용해야함.*/
+/* #p1 ~ p{
+    text-decoration: underline;
+} */
+
+/* p1 태그 이후 모든 요소들에게 적용 *<-모든 요소 선택자 */
+#p1 ~ *{
+    text-decoration: underline;
+}
+
+/* 가상클래스 선택자 */
+/* 특정 상황에 작동하는 선택자.. */
+/* active:클릭 */
+#bar1:active{
+    background-color: blueviolet;
+    color: white;
+}
+#bar2:hover{
+    background-color: yellowgreen;
+    color: red;
+}
+
+/* 위치 관련 가상클래스 선택자 */
+/* child 계열 (위치) */
+/* #season-wrapper :first-child{
+    color:springgreen
+} */
+/* #season-wrapper> :first-child{
+    color:springgreen
+} */
+/* #season-wrapper p:first-child{
+    color:springgreen
+} */
+/* #season-wrapper :last-child{
+    color:springgreen
+} */
+/* #season-wrapper :nth-child(3){
+    color:springgreen
+} */
+/* #season-wrapper :nth-child(2n+1){
+    color:springgreen
+} */
+
+/* of-tpye 계열(타입,위치) */
+#season-wrapper p:last-of-type{
+    color:springgreen
+}
+
+/* 부정 선택자 */
+#client-langs li:not(#css3){
+    color:darkred
+}
+
+/* 루트 선택자 */
+
+:root{
+    background-color: gainsboro;
+}
+
+
+/* 가상요소 선택자 : 단순 텍스트만 추가 가능, 태그를 추가할 수는 없다. */
+/* ::before 시작태그와 내용사이 */
+#price-list li::before{
+    content:'￦'
+}
+/* ::before 종료태그와 내용사이 */
+
+#price-list li::after{
+    content:'🥕'
+}

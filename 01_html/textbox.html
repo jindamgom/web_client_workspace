@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>타이틀</title>
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<style type="text/css">
+body{
+    font-size:0.74em;
+    margin:0;
+    padding:0;
+    background:#F5F5F5;
+}
+body,textarea{
+    font-family:돋움,dotum;
+    color:#555;
+}
+#box{
+    width:500px;
+    margin:20px auto 0;
+}
+fieldset{
+    padding:0;
+    border:none;
+}
+fieldset legend{
+    display:none;
+}
+#samestyledivid,
+textarea{
+    width:488px;
+    height:4.1em;
+    font-size:1em;
+    line-height:1.35em;
+    padding:3px 5px 0;
+    border-left:1px solid #333;
+    border-top:1px solid #333;
+    border-right:1px solid #999;
+    border-bottom:1px solid #999;
+    overflow:auto;
+ 
+}
+</style>
+<script type="text/javascript">
+function resizetextarea(textareaid,samestyledivid){
+    if(navigator.userAgent.toLowerCase().indexOf('safari')!=-1) return;
+    var isie=(navigator.userAgent.toLowerCase().indexOf('msie')!=-1)? true : false;
+    var textarea=document.getElementById(textareaid);
+    textarea.style.overflow='hidden';
+    if(isie) var samestylediv=document.createElement('<div id="'+samestyledivid+'">');
+    else{
+        var samestylediv=document.createElement('div');
+        samestylediv.setAttribute('id',samestyledivid);
+    }
+    textarea.parentNode.appendChild(samestylediv);
+    with(samestylediv.style){
+        position='absolute';
+        left='-20000px';
+        top='-20000px';
+        paddingTop=0;
+        paddingBottom=0;
+        borderTop=0;
+        borderBottom=0;
+        overflow='visible';
+    }
+    var originalheight=samestylediv.offsetHeight;
+    samestylediv.style.height='auto';
+    samestylediv.innerHTML='&nbsp;';
+    var range=samestylediv.offsetHeight;
+    textarea.onkeydown=function(e){
+        if(isie) e=window.event;
+        if(e.keyCode==13) this.style.height=(originalheight<samestylediv.offsetHeight+range)? samestylediv.offsetHeight+range+'px' : originalheight+'px';
+    }
+    textarea.onkeyup=function(){
+        samestylediv.innerHTML=this.value.replace(/\n/g,'<br \/>');
+        if(this.value.match(/\n.?$/)) samestylediv.innerHTML+='<br \/>';
+        this.style.height=(originalheight<samestylediv.offsetHeight)? samestylediv.offsetHeight+'px' : originalheight+'px';
+    }
+    textarea.oncontextmenu=function(){
+        var maxtime=5000,nowtime=0;
+        var savecontent=textarea.value;
+        var action=function(){
+            clearTimeout(textarea.pastetimer);
+            if(savecontent==textarea.value && maxtime>nowtime){
+                nowtime+=10;
+                textarea.pastetimer=setTimeout(action,10);
+            }else{
+                textarea.onkeyup();
+                nowtime=0;
+            }
+        }
+        action();
+    }
+    textarea.onkeyup();
+    if(navigator.userAgent.toLowerCase().indexOf('opera')!=-1){
+        textarea.onfocus=function(){
+            var action=function(){
+                textarea.onkeyup();
+                textarea.foropera=setTimeout(action,10);
+            }
+            action();
+        }
+        textarea.onblur=function(){
+            clearInterval(this.foropera);
+        }
+    }
+}
+</script>
+</head>
+ 
+<body>
+<div id="box">
+    <fieldset>
+        <legend>글쓰기</legend>
+        <textarea id="textareaid" cols="70" rows="15">내용에 맞게 늘어나는 텍스트박스.
+글을 써 보아요.</textarea>
+    </fieldset>
+    <script type="text/javascript">var textarea=new resizetextarea('textareaid','samestyledivid');    </script>
+</div>
+</body>
+</html>

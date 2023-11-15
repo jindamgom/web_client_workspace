@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1114_종합실습1</title>
+
+
+</head>
+
+    <form action="" method="get">
+        
+        <!-- 입력값들을 시각적으로 그룹핑 -->
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <br>
+            <label for="name">1.납품자명(필수) : </label>
+            <input 
+                type="text" 
+                id="name" 
+                name = "name" 
+                required>
+            <br>
+            <br>
+            <label for="email">2.이메일(필수) : </label>
+            <input 
+                type="email" 
+                name="email" 
+                id="email"
+                placeholder="answer@naver.com"
+                required>   
+            <br>
+            <br>
+            <label for="homepage">3.홈페이지 : </label>
+            <input 
+                type="url" 
+                name="homepage" 
+                id="homepage"
+                value="http://">   
+            <br>
+            <br>
+            <label for="local">4.지역 : </label>
+            <select name="local" id="local">
+                <option value="seoul">서울</option>
+                <option value="daegu">대구</option>
+                <option value="jeju">제주</option>
+                <option value="Gwangju ">광주</option>
+                <option value="busan" selected>부산</option>
+            </select>
+            <br>
+    </fieldset>
+ 
+        <fieldset>
+            <legend>납품 정보</legend>
+            <br>
+            <li for="productName">상품명(필수) : 
+                <input 
+                    type="text" 
+                    name="productName" 
+                    id="productName"
+                    required>
+            </li> 
+            <br>
+            <li for ="productCount">납품수량(필수) : 
+                <input 
+                    type="number" 
+                    name="productCount" 
+                    id="productCount" 
+                    placeholder="최소 100"
+                    min="100" 
+                    required>
+            </li> 
+            <br>
+            <li for="grade">납품등급(필수) : 
+                <input 
+                type="range" 
+                name="grade" 
+                id="grade" 
+                min="0" 
+                max="100"
+                required>
+            </li> 
+            <br>
+            <li for="etc">기타사항 : 
+                <textarea 
+                rows="5"
+                cols="20"
+                name="etc">  
+                </textarea>
+            <br>
+            </li> 
+           
+        </fieldset>
+        <br>
+        <input type="submit" value="send message">
+    </form>
+</body>
+</html>

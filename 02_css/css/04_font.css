@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+/*위의 import url는 맨 첫줄에 적어야함.*/
+
+/* 폰트 종류 구분 */
+/* 
+serif : 글자 끝에 삐침이 있음(궁서체 비슷)
+sans-serif : 글자 끝에 삐침 없음 (고딕체)
+cursive : 필기체 
+monospace : 글자 간격이 모두 동일한 폰트
+*/
+/*
+web font: 실제 개발환경과 클라이언트의 환경이 달라 폰트가 안보이거나 깨지는 
+현상이 발생하여 사용자에게 특정 font 제공
+*/
+* {
+    font-size: 24px;
+}
+/*폰트 나열, 왼쪽부터 존재하는지 검사 후 적용. 마지막 generic-family 작성*/
+/*폰트체 사이에 공백이 있는 경우엔 'Courier New', 'Times New Roman' 처럼 홑따옴표로 감싸서 씀 */
+#font1{
+    font-family: 'Times New Roman', Times, serif;
+}
+#font2
+{
+    /* font-family: 'Gaegu', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 50px; */
+    /* 모아쓰기 shorthand */
+    /* font : font-style font-weight font-size/line-height font-family */
+    font: italic bold 50px/50px 'Gaegu', sans-serif;
+    
+}
+#font3
+{
+    font-family: 'East Sea Dokdo', sans-serif;
+}
+#parent
+{
+    font-size: 32px;
+}
+html{
+    font-size: 100px;
+}
+#parent :first-child{
+    font-size:24px; /*절대 크기*/
+}
+#parent :nth-child(2){
+    font-size:150%; /*부모 요소 상대 크기*/
+}
+#parent :nth-child(3){
+    font-size:1.5em; /*부모 요소 상대 크기*/
+}
+#parent :last-child{
+    font-size:1.5rem; /*루트 요소 상대 크기*/
+}

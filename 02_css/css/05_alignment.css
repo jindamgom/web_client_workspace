@@ -1,0 +1,33 @@
+.parent{
+    background-color: bisque;
+    text-align: right;
+}
+.parent span{
+    background-color: hotpink;
+}
+
+.box{
+    width:200px;
+    height:200px;
+    border: 2px solid red; /*rrggbb*/
+    /* center */
+    /* margin: 0 auto;  */
+    /* right */
+    /* margin-left: auto; */
+     /* left :생략가능 기본값*/
+     margin-right: auto;
+}
+
+.item{
+    width: 300px;
+    height:300px;
+    border: 2px dashed blue; /*rrggbb*/
+    margin :0 auto;
+    /* 가운데정렬[상하좌우] */
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+.item span{
+    background-color: gold;
+}

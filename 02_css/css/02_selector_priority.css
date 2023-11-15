@@ -1,0 +1,19 @@
+#title{
+    color:darkmagenta !important; /*override금지*/
+    text-decoration: underline;
+}
+
+#box{
+    width:100px;
+    height:100px;
+    border:3px solid burlywood;
+    background-color: gold;
+}
+
+/*동1:div 은1:foo 은1:title*/
+div.foo[title=box]{
+    background-color: brown !important;
+}
+.foo{
+    background-color: silver;
+}

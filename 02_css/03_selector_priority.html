@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS | 선택자 우선순위</title>
+    <link rel="stylesheet" href="css/02_selector_priority.css">
+</head>
+<body>
+    <h1 id="title" style="color:chocolate">선택자 우선순위</h1>
+    <!--
+        style 태그 내 작성보다 lnline style 속성을 
+        작성한 것이 우선순위가 높다
+        !important를 작성하면 최우선 적용(override 금지)
+    -->
+    <!-- div#box.foo[title=box] -->
+    <div id="box" class="foo" title="box"
+    style="background-color: black;">
+    </div>
+    <!--
+        선택자 우선 순위 부여
+        -!important   /지양
+        -inline style /지양
+        -금 : id 
+        -은 : 클래스, 속성 , 가상클래스
+        -동 : 태그, 가상요소 선택자
+    -->
+</body>
+</body>
+</html>
