@@ -1,0 +1,128 @@
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center; /*column이라 align-items을 사용*/
+    /* justify-content: center; */
+}
+.wrapper img{
+    width:300px;
+    margin: 50px 0;
+}
+
+/*요소 이동 translate : position값 변경없이 요소 이동이 가능하다.*/
+.wrapper img:first-child:hover{
+    /*현재 포지션:static*/
+    transform: scale(2) translate(100px,100px);
+    /* transform: translate(500px,500px); */
+   
+}
+
+/* 확장/축소하는 scale */
+.wrapper img:nth-child(2):hover{
+    transform: scale(.5);
+}
+
+/* 회전 rotate(n deg) */
+.wrapper img:last-child:hover{
+    transform: rotate(90deg);
+}
+
+
+/* Transition */
+.box{
+    width:100px;
+    height:100px;
+    background-color: tomato;
+    border:2px solid black;
+
+    
+    transition-duration: 1s;
+    /*all(기본값)*/
+    transition-property: width,height; 
+    transition-delay: .3s;
+    /*속도 곡선*/
+    transition-timing-function: ease-out; 
+    
+    /*위의 코드를 한 줄로.*/
+    transition: all 1s ease-out .3s;
+}
+
+
+/*body:hover .box{*/
+.box:hover{
+    background-color: darkseagreen;
+    width:200px;
+    height:200px;
+}
+
+
+
+
+
+
+
+
+
+/* 트랜지션이 적용된 게시글 카드 */
+.card{
+    display : inline-block;
+    width:380px;
+    height:380px;
+    margin:10px;
+    padding:30px;
+    background-color: palegoldenrod;
+    cursor : pointer;
+    color:purple;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 35px 77px -17px rgba(0,0,0,0.5);
+    overflow: hidden; /*영역밖으로 나간 자식 감추기*/
+    transition-duration: 0.3s;
+}
+
+.card h1{
+    font-weight: 300;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+.card h2{
+    background-color: rgba(0,0,0,0.3);
+    font-weight: 300;
+    margin-top: 20px;
+    font-style: italic;
+    transform: translate(-300px,0);
+    opacity: .7;
+}
+.card p{
+    background-color: rgba(0,0,0,0.3);
+    font-weight: 300;
+    margin-top:20px;
+    line-height:24px;
+    transform: translate(0,600px);
+    transition-delay: .1s;
+    opacity: .5;
+}
+.transition{
+    transition-duration: .5s;
+}
+.card:hover{
+    box-shadow: 0 35px 77px -17px rgba(0,0,0,1);
+}
+
+.card:hover .transition{
+    transform: translate(0,0);
+    opacity: 1;
+    font-weight: 700;
+}
+
+
+
+/*두번째 */
+.transition2{
+    transition-duration: 1s;
+}
+
+.card:hover .transition2{
+    transform: translate(0,0);
+    opacity: .5;
+    font-weight: 700;
+}

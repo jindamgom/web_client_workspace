@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Hello JS</title>
+
+    <script src="js/01_hellojs.js"></script>
+    <!--마치 hello.js를 이 아래에 작성한 것과 동일-->
+
+    <script>
+        //두번째 좋은 위치 head
+        console.log(1234);
+        cola(); //만약 cola함수를 script src="js/01_hellojs.js" 이전에 실행시 오류
+    </script>
+</head>
+<body>
+    <h1>Hello JS</h1>
+    <!--
+        js는 웹페이지 내에서 동적인 부분을 담당하는 언어
+        (사용자 상호작용, 이벤트처리[클릭시..], 외부서비스 이용..)
+        brendan eich가 기존 lisp언어를 베이스로 10일만에 작성한 언어
+        언어적 이슈가 있지만 계속 대응하며 발전시켜옴
+        node라는 런타임을 사용해서 브라우저가 아닌 서버/네이티브환경에서도 실행 가능
+        유연한 문법으로 배우기에 쉬운 편
+        Mocah,LiveScript 이름을 사용하다가 트랜드인 자바와 비슷한 이름인 자바스크립트로 변경
+        C/C++로 제작된 언어라 Java와 비슷한 부분도 많다.
+    
+    -->
+    <h2>js사용하는 3가지 방법</h2>
+    <ol>
+        <li>태그의 이벤트 속성(onxxx)에 작성하기
+            <!--alert는 브라우저마다 모양이 상이함-->
+            <button onclick="alert('ㅇㅇ');">클릭</button>
+        </li>
+        <li>html페이지에 script 태그를 통해 작성하기
+            <button onclick="foo();">클릭</button>
+        </li>
+        <li>[추천]외부 js파일을 로드해서 실행</li>
+        <button onclick="cola();">클릭</button>
+    </ol>
+
+    <!--
+        script 제일 좋은 위치 바디 종료태그 바로 앞
+        dom tree 구성 완료 후 실행
+    -->
+    <script src="js/01_hellojs.js"></script>
+    <script>
+        console.log(9999);
+        console.log(1000);
+        //함수 선언 (실행은아님)
+        function foo(){
+            console.log('🍟');
+        }
+        cola();
+    </script>
+</body>
+</html>

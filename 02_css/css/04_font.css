@@ -17,6 +17,7 @@ web font: 실제 개발환경과 클라이언트의 환경이 달라 폰트가 �
 }
 /*폰트 나열, 왼쪽부터 존재하는지 검사 후 적용. 마지막 generic-family 작성*/
 /*폰트체 사이에 공백이 있는 경우엔 'Courier New', 'Times New Roman' 처럼 홑따옴표로 감싸서 씀 */
+/*font-size default:16, font-family 갯수 제한없음. 영문,숫자,기타등등 텍스트타입에 따라 맞는 폰트 적용됨*/
 #font1{
     font-family: 'Times New Roman', Times, serif;
 }
@@ -24,9 +25,10 @@ web font: 실제 개발환경과 클라이언트의 환경이 달라 폰트가 �
 {
     /* font-family: 'Gaegu', sans-serif;
     font-size: 50px;
+    bold 300(light) 480(regular), 800(bold)
     font-weight: bold;
     font-style: italic;
-    line-height: 50px; */
+    line-height: 50px; (한 줄의 높이) */
     /* 모아쓰기 shorthand */
     /* font : font-style font-weight font-size/line-height font-family */
     font: italic bold 50px/50px 'Gaegu', sans-serif;
@@ -44,7 +46,7 @@ html{
     font-size: 100px;
 }
 #parent :first-child{
-    font-size:24px; /*절대 크기*/
+    font-size:24px; /*절대 크기, 부모요소 영향 안받음*/
 }
 #parent :nth-child(2){
     font-size:150%; /*부모 요소 상대 크기*/

@@ -1,0 +1,19 @@
+table{
+    border: 1px solid black;
+    /*기본값은 보더 여백있음. collapse하면 없어짐*/
+    border-collapse: collapse;
+    /*caption 위치*/
+    caption-side: bottom;
+    width : 500px;
+    height: 500px;
+    /*테이블 너비 고정*/
+    table-layout: fixed;
+    /*테이블에만 있는 속성*/
+    
+}
+th,td{
+    border: 1px solid black;
+    padding: 10px 5px;
+    text-align: center;
+    vertical-align: middle;/*기본:중앙, talbe-cell에서만 적용되는 속성*/
+}

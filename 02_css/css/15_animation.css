@@ -1,0 +1,39 @@
+.box{
+    width:300px;
+    height:300px;
+    border:3px solid black;
+    background-color: beige;
+
+
+}
+
+body:hover .box{
+    animation-name: my-ani; /*적용할 키 프레임*/
+    animation-duration: 1s; /*애니메이션 시간*/
+    animation-direction: alternate; /*reverse : 100->0*/
+    animation-iteration-count: infinite; /*애니메이션 실행 횟수*/
+    animation-delay: 1s;
+    animation-timing-function: ease();
+    
+    /* animation: name duration timing-function delay interation-count direction */
+    /* animation: my-ani 1s ease 1s infinite normal; */
+}
+
+@keyframes my-ani {
+    25%
+    {
+        transform: translate(300px,0);
+    }
+    50%
+    {
+        transform: translate(300px,300px);
+    }
+    75%
+    {
+        transform: translate(0px,300px);
+    }
+    100%
+    {
+        transform: translate(0px,0px);
+    }
+}

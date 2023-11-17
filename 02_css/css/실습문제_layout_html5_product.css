@@ -1,0 +1,10 @@
+#container
+{
+    background-color: beige;
+}
+
+
+/*prod-list의 점 제거*/
+.prod-list{
+    list-style:none;
+}

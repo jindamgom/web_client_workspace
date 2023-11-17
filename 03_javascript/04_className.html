@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js | CLASS로 DOM 제어하기</title>
+    <style>
+        table{
+            border:1px solid pink;
+            border-collapse: collapse;
+            margin: 0 auto; 
+        }
+        th,td{
+            border: 1px solid pink;
+            padding: 5px;
+        }
+        class on{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>class로 Dom 제어하기..</h1>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="5">
+                    <h2>★수강신청★</h2>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="5">
+                    <label for="checkAll">모두 선택</label>
+                    <input type="checkbox" id="checkAll">
+                </th>
+            </tr>
+            <tr>
+                <td class="on">
+                    <label for="subject-kor">국어</label>
+                    <!--this용법1:tag객체의 lnline속성에 작성한 this는 tag객체 자신을 가리킨다.-->
+                    <input type="checkbox" name="subject" id="subject-kor" value="국어" onchange="checkSubject(this);">
+                </td>
+                <td>
+                    <label for="subject-eng">영어</label>
+                    <input type="checkbox" name="subject" id="subject-eng" value="영어" onchange="checkSubject(this);">
+                </td>
+                <td>
+                    <label for="subject-math">수학</label>
+                    <input type="checkbox" name="subject" id="subject-math" value="수학" onchange="checkSubject(this);">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <script src="js/04_className.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/* flex-container */
+ul#test{
+    list-style:none;
+    padding:0;
+    border:3px solid red;
+    height: 500px;
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+/* flex-item */
+ul#test li{
+    border:1px solid gold;
+    width:40px;
+}

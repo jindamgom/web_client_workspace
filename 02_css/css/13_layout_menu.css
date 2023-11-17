@@ -1,0 +1,72 @@
+ul.menu{
+    /*view port 기준:화면단의 80퍼를 사용*/
+    width:80vw;
+    padding:0;
+    margin:0 auto;
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+ul.menu li{
+    width:8em;
+    height:2.5em;
+    background-color: #c9c9c9;
+    border-right: 1px solid #818181 ;
+    text-align:center;
+
+    /*자식 text의 위치를 정하기 위해 또 flex를 선언함*/
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+ul.menu > li:first-child{
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+}
+
+ul.menu > li:last-child{
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
+    border-right: 0; /*위에서 만든 border-right 제외*/
+}
+
+ul.menu li a{
+    display: block;
+    padding:.5em;
+    text-decoration: none;
+    color:azure;
+}
+
+ul.menu li:hover {
+    background-color: darkslategrey;
+}
+ul.menu li:hover a{
+    color:brown;
+}
+
+
+/* 서브 메뉴 - 메인을 hover했을때 보이도록 */
+ul.menu ul{
+    display:none;
+    padding-left:0;
+    margin-top:3px;
+}
+/*li hover시 ul에 대한 스타일적용*/
+ul.menu li:hover ul{
+    display:block;
+}
+
+ul.menu ul >li {
+    border-right: 0;
+}
+
+/*서브메뉴 경계선 - 마지막 서브메뉴 바닥에 경계선은 필요없으므로 제외*/
+ul.menu ul> li:not(:last-child){
+    border-bottom: 1px solid #818181;
+}

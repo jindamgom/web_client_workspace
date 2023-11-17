@@ -18,11 +18,10 @@
     /*lt ,rt, rb, lb 순서*/
     border-radius: 10%; 
     /* 50%가되면 원이됨 */
-    
 
 }
 .item:hover
 {
-    /* x-offset, y-offset, blur(번짐정도), spread(그림자크기), color */
-    box-shadow: 5px 5px 10px 3px gray;
+/* x-offset, y-offset, blur(번짐정도), spread(그림자크기), color */
+    box-shadow: 5px 5px 10px 3px black;
 }

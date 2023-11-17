@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS | Position</title>
+    <link rel="stylesheet" href="css/10_layout_positon.css">
+</head>
+<body>
+    <!--
+        요소는 offset을 줄수있다
+        static
+            -(기본값) 문서 내 정의 된 대로 화면 배치 (위-아래/좌-우)
+            -offset값 무시
+        relative
+            -문서 내 정의 된 대로 화면 배치 (위-아래/좌-우)
+            -offset값 적용
+        absolute
+            -기준이 될 부모가 필요하다.
+            -가장 가까운 부모/조상요소(position:static이 아닌) 
+             기준으로 offset 적용
+        fixed
+            -브라우저 viewport 기준으로 offset 적용(화면에 고정)
+        sticky
+            -relative처럼 작동하다가 특정 offset에 다다르면 fixed처럼 작동
+    -->
+    <h2 class="p-sticky">sticky</h2>
+    <h2>static</h2>
+    <!--.outer>.first+.second+.third-->
+    <div class="outer">
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+    </div>
+
+    <h2>relative</h2>
+    <div class="outer">
+        <div class="first"></div>
+        <div class="second p-relative"></div>
+        <div class="third p-relative"></div>
+    </div>
+
+    <h2>absolute</h2>
+    <!--static이 아닌 요소를 부모로 둔다 바로 위에 있는 relative를 부모로 지정-->
+    <div class="outer p-relative">
+        <div class="first"></div>
+        <div class="second p-absolute"></div>
+        <div class="third p-absolute"></div>
+    </div>
+
+    <h2>fixed</h2>
+    <div class = "p-fixed circle"></div>
+
+    <h2>z-index</h2>
+    <!-- 
+        -z축 기준으로 요소를 배치하는 속성
+        -값이 클 수록 앞(사용자)쪽으로 배치됨
+        -position : static 에서는 불가
+        -z-index값이 같다면 문서상 나중에 작성한게 앞에 위치
+    -->
+    <div class="wrap p-relative">
+        <div class="box box1 z-10"></div>
+        <div class="box box2 z-20"></div>
+        <div class="box box3 z-30"></div>
+    </div>
+
+    <div class="wrap p-relative">
+        <div class="box box1 z-10"></div>
+        <div class="box box2 z-20"></div>
+        <div class="box box3 z-30"></div>
+    </div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

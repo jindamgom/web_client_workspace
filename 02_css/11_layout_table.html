@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS | Layout - Table</title>
+    <link rel="stylesheet" href="css/11_layout_table.css">
+</head>
+<body>
+    <h1>Table</h1>
+
+<table>
+    <caption>웹 브라우져 표</caption>
+    <thead>
+        <tr>
+            <th>브라우져명</th>
+            <th>제조사</th>
+            <th>홈페이지</th>
+        </tr>
+    </thead>
+    <!--tbody>(tr>td)*3 
+        이렇게 괄호로 묶어서 내가 원하는대로 태그를 만들수 있다.-->
+    <!--tbody>tr>td*3-->
+    <!-- tbody>(tr>td*3)*3 -->
+    <tbody>
+        <tr>
+            <td>Edge</td>
+            <td>ms</td>
+            <td><a href="https://microsoft.com">https://microsoft.com</a></td>
+        </tr>
+        <tr>
+            <td>Chrome</td>
+            <td>google</td>
+            <td><a href="https://google.com">https://google.com</a></td>
+        </tr>
+        <tr>
+            <td>safari</td>
+            <td>apple</td>
+            <td><a href="https://apple.com">https://apple.com</a></td>
+        </tr>
+        <tr>
+            <td colspan="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore mollitia tempore expedita, voluptatem neque est, aperiam nulla consequatur excepturi, commodi voluptates sed architecto quod perspiciatis illum tempora vitae aut numquam!</td>
+        </tr>
+    </tbody>
+   <!--tfoot 추가-->
+   <!--tfoot>tr>th*2 -->
+   <tfoot>
+    <tr>
+        <th>총 갯수</th>
+        <!-- colspan 2개로 확장 col:가로 /row:세로 -->
+        <th colspan="2">3</th>
+    </tr>
+   </tfoot>
+</table>
+
+</body>
+</html>
