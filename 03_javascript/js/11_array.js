@@ -201,7 +201,7 @@ function test6()
     //push : 마지막에 요소 추가
     //pop : 마지막 요소 제거 (반환)
     //unshift : 0번지에 요소 추가
-    //shifht : 0번지에 요소 제거 (반환)
+    //shift : 0번지에 요소 제거 (반환)
     const arr = ['강남','역삼','선릉'];
     arr.push('삼성'); //mutable
     console.log(arr.pop());
@@ -238,6 +238,5 @@ function test6()
 
     //toString(override)
     console.log(alpha.toString());
-
 
 }

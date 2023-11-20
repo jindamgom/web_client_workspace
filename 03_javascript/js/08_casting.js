@@ -57,7 +57,7 @@ function test2()
  * 숫자형변환
  * Number() 숫자로 변환. 변환 불가한 문자가 하나라도 있으면 nan반환
  * parseInt() 정수로 변환. 변환 불가한 문자가 있기 전까지 반환
- * paseFloat() 실수로 변환. 변환 불가한 문자가 있기 전까지 반환
+ * parseFloat() 실수로 변환. 변환 불가한 문자가 있기 전까지 반환
  */
 function test3()
 {
