@@ -15,26 +15,26 @@ function checkSubject(checkbox)
     console.log(td);
     //.on 토글(toggle) 
     //1.삼항연산자
-    td.className = checkbox.checked?"on":"";
+    // td.className = checkbox.checked?"on":"";
 
     //2.if-else문
-    if(checkbox.checked)
-    {
-        td.className="on"; 
-    }
-    else{
-        td.className="";
-    }
+    // if(checkbox.checked)
+    // {
+    //     td.className="on"; 
+    // }
+    // else{
+    //     td.className="";
+    // }
 
 
     //3.
-    if(checkbox.checked)
-    {
-       td.classList.add("on");
-    }
-    else{
-        td.classList.remove("on");
-    }
+    // if(checkbox.checked)
+    // {
+    //    td.classList.add("on");
+    // }
+    // else{
+    //     td.classList.remove("on");
+    // }
     
     //4.
     td.classList.toggle("on");
