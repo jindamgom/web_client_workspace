@@ -6,6 +6,8 @@
  *      -remove(className:string)
  *      -toggle(className:string)
  */
+
+
 function checkSubject(checkbox)
 {
     //log는 콤마로 연결해서 찍을 수 있다
@@ -15,7 +17,11 @@ function checkSubject(checkbox)
     console.log(td);
     //.on 토글(toggle) 
     //1.삼항연산자
+<<<<<<< HEAD
     // td.className = checkbox.checked?"on":"";
+=======
+    //td.className = checkbox.checked?"on":"";
+>>>>>>> 38e45570e8e1e85bc87d8d53d0b79f4a10098138
 
     //2.if-else문
     // if(checkbox.checked)

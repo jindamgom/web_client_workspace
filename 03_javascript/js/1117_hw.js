@@ -94,32 +94,17 @@ function checkAll()
 //=======================================================================================================================================
 function printValue()
 {
-    const myForm = document.getElementsByName("purchaseFrm");
-    console.log("myForm:"+myForm); //getter
-    const child = myForm.length;
-    console.log("child:"+child);
-    //name=폼
-//    const myForm = document.getElementsByName("purchaseFrm");
-//    console.log("부모:"+myForm);
-//    const children = myForm.children;
-//    console.log("자식:"+children);
-//    for(let i=0; i<children.length; i++)
-//    {
-//         console.log(children[i]);
-//    }
+    const input01 = document.querySelector("input").value;
 
-    // const inputs = document.getElementsByTagName("input");
-    // const name = inputs[4];
+    const input02 = document.getElementById("pname").value;
 
-    // const inputs = document.getElementsByClassName("user-input");
-    // const name = inputs[0];
+    //getElementsByName:동일한 이름이 여러개일 경우, 배열로 반환
+    const input03 = document.getElementsByName("price")[0].value;
 
- 
-    //alert("당신의 이름은.."+inputs.value);
-    //const area = document.getElementById("area");
-    //area.innerText = inputs.value;
+    const area = document.getElementById("area");
+    area.innerText =`구입자 : ${input01}님\n구입상품 : ${input02}\n구매가격 : ${input03}만원 `;
+   
 }
-
 
 function printScore()
 {
