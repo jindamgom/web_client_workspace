@@ -57,4 +57,19 @@ function array03()
     const arr2  = arr1.slice().reverse(); //slice로 복사
 
     console.log("리버스 결과:",arr2);
+    
+    /**
+     * 실습문제 풀이 - array03도 02처럼 
+     * pop[마지막 요소 제거]
+     * push[마지막에 요소 추가]
+     * 로 가능
+     * 
+     */
+    // arr.length = 0 일때 false로 평가된다.
+    while(arr1.length) {
+        copy2.push(arr1.pop());
+      }
+      console.log(arr1); // []
+      console.log(arr2); // [100, 99, 98,...., 3, 2, 1]
+    }
 }

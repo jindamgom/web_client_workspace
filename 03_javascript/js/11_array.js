@@ -6,7 +6,11 @@
  */
 
 function test1()
-{
+{   
+    // 1121 요런식으로도 배열을 쓰기도함.
+    // const myArr = [];
+    // myArr.push(value);
+
     const arr1 = [1,2,3]; //리터럴로 생성
     const arr2 = new Array(1,2,3); //new 연산자로 생성
 
@@ -38,7 +42,7 @@ function test1()
 /**
  * 반복문
  * -for
- * -for in문 : 각 속성명(index)을 매턴에 반환
+ * -for in문 : 각 속성명(index)을 매턴에 반환 . 객체 순회에 적합
  * -for of문 : 각 속성값을 매턴에 반환
  */
 function test2()
@@ -238,5 +242,115 @@ function test6()
 
     //toString(override)
     console.log(alpha.toString());
+}
 
+/**
+ * 1121 forEach~
+ */
+
+/**
+ * forEach(callbackFunction)
+ * callbackFunction이란?
+ * -함수를 함수에 전달하면, 내부적으로 호출해서 사용함. 
+ * -단순반복 처리.
+ * -요소 별로 callbackFunction 호출.
+ * -immutable
+ */
+
+function test7(){
+    const arr=['a','b','c','d','e'];
+    arr.forEach(function(ch,index,_arr)
+    {
+        console.log(ch,index,_arr);
+    });
+    const brr = [1,2,'가',3,'신사임당','CAT',500,'졸려'];
+    const nums =[];//숫자만담기
+    const strs = []; //문자만담기
+
+    //index뒤 _brr[생략가능]
+    brr.forEach(function(elem,index)
+    {
+        //짧은조건문
+        (typeof elem ==='number') && nums.push(elem);
+        (typeof elem ==='string') && strs.push(elem);
+    });
+
+    console.log(nums);
+    console.log(strs);
+}
+/**
+ * filter(cbFunc)
+ * -boolean을 반환하는 콜백함수를 전달한다
+ * -true를 반환한 요소만 새 배열에 담아 반환.
+ * -immutable
+ */
+function test8(){
+    const arr = [1,2,3,4,5,6,7,8,9,10];
+    
+    const evens = arr.filter(function(n,i,_arr)
+    {
+        console.log(n,i,_arr);
+        return n % 2 == 0; //짝수만
+    });
+    console.log(evens);
+}
+/**
+ * map(cbFunc)
+ * -요소 별 연산결과를 새 배열에 담아 반환한다.
+ * -immutable 
+ * 
+ */
+function test9(){
+    const arr = [1,2,3];
+    const arr2 = arr.map(function(n){
+        return n*n;
+    });
+    console.log(arr2);
+
+    //페이지 내의 버튼 속 글자를 배열에 담는다.
+    //1.버튼 배열 생성
+    //=>가짜배열을 진짜배열로 변환
+    //2.맵 함수를 이용해서 버튼 태그 안의 innerhtml속성값을 배열에 담아 반환
+
+     //버튼속성을 가져오기 + 가짜배열을 진짜배열로 변환하기
+    const buttons = [...document.querySelectorAll("button")];
+    //innerHTML로 텍스트만 가져와서 buttonTextArray에 담는다.
+    const buttonTextArray = buttons.map(function(n)
+    {
+        return n.innerHTML;
+    });
+    console.log(buttonTextArray);
+}
+
+/**
+ * reduce(cbFunc[,initValue])//초기값:생략가능
+ * -모든 요소를 순회해서 "하나의 값"을 반환한다. 
+ * -하나의 값이 배열일 수도 있다.
+ * -초기값을 지정하지 않으면 첫번째 요소가 초기값이 됨
+ * 
+ */
+function test10()
+{
+    const arr=[1,2,3,4,5,6,7,8,9,10];
+    const sum = arr.reduce(function(agg,n,i,_arr){
+        console.log(agg,n,i,_arr);
+        return agg+n; //계속 누적
+    },0);    
+    console.log(sum);
+
+    //홀수 배열 생성
+    //초기값에 배열도 줄 수있다.
+    const odds = arr.reduce(function(agg,n){
+        n % 2 == 0 || agg.push(n);//홀수일 때만 agg에 push
+        return agg;//계속 누적[push]하기 위해서 agg를 리턴.
+    },[]);
+    console.log(odds);
+
+    //페이지내의 버튼속 글자를 배열에 담기 reduce ver
+    const buttons = [...document.querySelectorAll("button")];
+    const reduceBtnArr = buttons.reduce(function(arr,n){
+        arr.push(n.innerHTML);
+        return arr;
+    },[]);
+    console.log(reduceBtnArr);
 }
