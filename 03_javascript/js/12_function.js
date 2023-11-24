@@ -5,7 +5,7 @@
 
 
 /**
- * 함수 선언식
+ * 함수 선언식  미리 선언가능
  * -hoisting 처리됨
  * -<script>태그,js파일을 처리시에 함수가 끌어올려져서(hoisting)먼저 등록됨.
  */
@@ -28,7 +28,7 @@ const test1 = function()
 /**
  * IIFE
  * -Immediately Invoked Function Expression
- * -즉시 호출 되는 함수 표현식
+ * -"즉시 호출" 되는 함수 표현식
  * -함수 선언과 호출을 동시에 처리(1회용)
  * -전역변수 노출 대신 지역변수로 처리하기 위한 용도
  */
@@ -52,6 +52,8 @@ const test2 = function(){
     foo(10,20,30);
     foo(10);
     foo();
+    //위에 4개 다 오류나지 않음. 
+    //하지만 올바르게 값이 전달되었나 확인이 불가함.
 }
 const foo = function(m,n){
     console.log(m,n);
@@ -121,6 +123,7 @@ const test5 = () => {
 };
 
 //주의점 ...names,gom 이렇게 바꿔서 인자값 받을 수 없음.
+//names 는 배열로 넘어온다. 위에 배열로 선언되어있음~
 const zoo = (gom,...names) => {  //나머지 파라메터(변수,공간)
     console.log(gom,names);
 }

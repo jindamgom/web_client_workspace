@@ -40,8 +40,9 @@ function test1()
     //false || (실행문)
     //두 번째 실행 때는 이제 foo가 존재하므로 또 추가되진 않음.
     //연산자우선순위 때문에 괄호처리할것.
-    document.querySelector("#foo") || 
-    (document.body.innerHTML +='<div id="foo">🍗🍗🍗🍗🍗🍗</div>');
+    document.body.innerHTML +='<div id="foo">🍗🍗🍗🍗🍗🍗</div>'
+    // document.querySelector("#foo") || 
+    // (document.body.innerHTML +='<div id="foo">🍗🍗🍗🍗🍗🍗</div>');
 }
 function hol()
 {

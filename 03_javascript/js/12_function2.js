@@ -1,3 +1,5 @@
+
+
 /**
  * 나머지 파라메터
  * -매개인자 여러개를 배열로 처리
@@ -138,6 +140,7 @@ const calc2 = (f,a,b) =>{
 
 const test8 = () =>
 {
+    //k는 함수다.
     const k = getFunction();
     //const k =()=>console.log('🧁🧁🧁');
     //const k = (text) => console.log(`${text}🧁🧁🧁`);

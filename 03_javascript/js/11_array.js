@@ -263,11 +263,14 @@ function test7(){
     {
         console.log(ch,index,_arr);
     });
+    //숫자와 문자가 혼합된 배열
     const brr = [1,2,'가',3,'신사임당','CAT',500,'졸려'];
     const nums =[];//숫자만담기
     const strs = []; //문자만담기
 
     //index뒤 _brr[생략가능]
+    //함수사용시 매개인자-매개변수가 달라도 작동이 됨.
+    //가령 매개인자가 1개/매개변수가 3개면 1개에 대한 값만 받음
     brr.forEach(function(elem,index)
     {
         //짧은조건문
@@ -279,7 +282,7 @@ function test7(){
     console.log(strs);
 }
 /**
- * filter(cbFunc)
+ * filter(cbFunc) - return:true or false
  * -boolean을 반환하는 콜백함수를 전달한다
  * -true를 반환한 요소만 새 배열에 담아 반환.
  * -immutable
@@ -332,10 +335,10 @@ function test9(){
 function test10()
 {
     const arr=[1,2,3,4,5,6,7,8,9,10];
-    const sum = arr.reduce(function(agg,n,i,_arr){
+    const sum = arr.reduce(function(agg,n,i,_arr){ //agg,요소, 인덱스 ,원본배열
         console.log(agg,n,i,_arr);
         return agg+n; //계속 누적
-    },0);    
+    },0);    //0:초기값
     console.log(sum);
 
     //홀수 배열 생성

@@ -45,7 +45,7 @@ const test1 = () => {
  * -new 연산자와 함께 호출할 함수
  * -결과물로 해당타입의 객체가 반환된다.
  * -관례적으로 대문자로 시작하는 이름을 가진다.
- * -this용법3. 생성자함수(new 연산자로 호출)안 this는 현재 객체를 가리킨다.
+ * -this용법3. 생성자함수(new 연산자로 호출)안 this는 "현재 객체"를 가리킨다.
  */
 const test2 = () => {
     const pets = [];
@@ -64,9 +64,13 @@ function Pet(name, breed, weight, age, ...color){
     this.weight = weight;
     this.age = age;
     this.color = color;
-    this.bite = function()
-    {
-        return this.weight<10? '콱':'콱콱';
+    // this.bite = function()
+    // {
+    //     return this.weight<10? '콱':'콱콱';
+    // };
+    //자기 this가 없어 부모의 this(생성자 함수의 this)를 가져다쓰기때문에 정상작동
+    this.bite = () =>{
+        return this.weight<10? '콱!':'콱콱!!';
     };
 }
 

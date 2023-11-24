@@ -30,7 +30,7 @@ const test1 = () =>{
 
     //속성 접근
     //1.dot-notation
-    //2.bracket - notation
+    //2.bracket - notation (애매한 속성명은 bracket으로 접근하자)
 
     //1.dot-notation
     console.log(obj.id);
@@ -53,11 +53,13 @@ const test1 = () =>{
     //존재하지 않는 속성 참조
     console.log(obj.father); //undefined
     //console.log(obj.father.job());//Uncaught TypeError: Cannot read properties of undefined (reading 'job')
-  
+    //java와 유사함 가령 null인 str을 확인하는건 문제가 없지만,
+    //해당 str의 length를 확인하려하면 오류가 발생함.
+
     //속성추가
     obj.father = 'ㅎㅎㅎ';
     obj.father = 'ㅋㅋㅋ'; //override 덮어씌워짐
-    console.log(obj);
+    console.log(obj);//확인하면 ㅎㅎㅎ가 아닌 ㅋㅋㅋ가 출력.
 
     //속성값 제거
     obj.hobby = undefined;
@@ -84,6 +86,13 @@ const test2 = () =>{
         eat(food)
         {
         console.log(`${this.username}가 ${food}를 먹는다.`);
+        },
+
+        //객체 안 화살표 함수는 지양.이럴땐 this가 없어서 undefined을 가져옴
+        work: () => {
+            console.log(this); //this.window(없음)=>test2.this(없음)=>window.this
+            console.log(`${this.username}가 일한다.`);
+            //undefined가 일한다.
         }
         
     }
@@ -93,6 +102,7 @@ const test2 = () =>{
     
     user['run']();
     user['eat']('🧀');
+    user.work();
 };
 
 /**
