@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | fetch/axios</title>
+    <style>
+        table{
+            border:1px solid #000000;
+            border-collapse: collapse;
+            margin:10px 0;
+        }
+        th,td{
+            border:1px solid #000000;
+            padding:5px;
+        }
+
+    </style>
+</head>
+    <h1>fetch</h1>
+    <div>
+        <button id="btn1">학생정보 가져오기</button>
+        <table id="tb-user">
+            <tr>
+                <th>id</th>
+                <td id="id"></td>
+            </tr>
+            <tr>
+                <th>company</th>
+                <td id="company"></td>
+            </tr>
+            <tr>
+                <th>classroom</th>
+                <td id="classroom"></td>
+            </tr>
+            <tr>
+                <th>cnt</th>
+                <td id="cnt"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button id="btn2">github avatar</button>
+        <div class="img-wrapper"></div>
+    </div>
+
+    <h1>axios</h1>
+    <button id="btn3">학생정보</button>
+    <button id="btn4">아바타 가져오기</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js" integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src ="js/26_fetch_axios.js"></script>
+</body>
+</html>

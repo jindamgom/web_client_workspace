@@ -56,6 +56,7 @@ document.querySelector("#btn2").addEventListener('click',(e)=>{
  * anchor
  * -^ 시작
  * -$ 끝
+ * 전체 범위를 설정할 때 시작과 끝을 지정해줘야 함.
  */
 document.querySelector("#btn3").addEventListener('click',(e)=>{
     const src = 'JavaScript jQuery Ajax sass xxx';
@@ -101,7 +102,9 @@ document.querySelector("#btn4").addEventListener('click',(e)=>{
 /**
  * [] 한글자에 대한 값 목록
  * -ascii code기반으로 범위설정 가능
- * -^으로 시작하면 반전처리 
+ * -^으로 시작하면 반전처리 (not)
+ * ^[범위] =>시작
+ * [^범위] =>이 범위가 아닌것
  */
 
 document.querySelector("#btn5").addEventListener('click',(e)=>{
@@ -128,9 +131,11 @@ document.querySelector("#btn5").addEventListener('click',(e)=>{
     area.innerHTML += `<p>${src.replace(/[ㄱ-ㅎㅏ-ㅣ가-힣]/g,'<mark>$&</mark>')}</p>`;
 
     /**
+     * 영대소문자 모두 포함하고싶다 할때
+     * [A-z]는 불가능.=>아스키코드를 보면 A-Z와 a-z사이에 특수문자가 끼어있으므로...A-Za-z 이렇게 사용해야한다.
      * 유의사항
      * A-Z까지 허용하되 Q는 빼고싶다.
-     * /[A-Z^Q]/ 이거 못씀. 반전을 의미하는 ^는 맨 앞에서만 사용가능
+     * /[A-Z^Q]/ 이거 못씀. 반전을 의미하는 ^는 "맨 앞"에서만 사용가능
      * 이 정규식의 의미는 A-Z까지 다 되고 ^도Q도 허용한다는뜻임
      * /[A-PR-Z]/ 이렇게 하면 Q만 빠진다.
      */
