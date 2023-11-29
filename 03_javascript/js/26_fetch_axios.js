@@ -1,10 +1,13 @@
 /**
  * fetch api
- * -promise 기반의 비동기 통신객체
+ * -promise 기반의 비동기 통신객체(then 사용가능)
  * -fetch:비동기작업(네트워크상의 요청(요청이 언제 끝날지 모르므로))-then:콜백
  * -json 응답에 대한 처리
  * -json이란? javascript object notation 프로그램간의 데이터 교환언어(약속)
- * 
+ * -속성명은 반드시 쌍따옴표로 감싼다.홑따옴표 x
+ * -문자열도 반드시 쌍따옴표로 감싼다.
+ * -대신 숫자,boolean,null은 그대로 작성.
+ * -객체/배열 사용가능
  */
 document.querySelector("#btn1").addEventListener('click',()=>{
     console.log("btn1 click");
@@ -13,7 +16,7 @@ document.querySelector("#btn1").addEventListener('click',()=>{
         //fetch의 첫번째 콜백함수는 응답이 시작되는 순간 호출
         //->응답데이터 확인불가
         console.log(response);
-        return response.json(); //응답데이터중 json 추출
+        return response.json(); //응답데이터중 json 추출 (실제 데이터부분을..)
 
     })
     // .then((text)=>{
@@ -111,5 +114,40 @@ document.querySelector("#btn4").addEventListener('click',()=>{
     }))
     .then((img)=>{
         setTimeout(() => img.remove(),3000);
+    })
+});
+
+/**
+ * 1129
+ * API KEY와 함께 전송하기
+ * 보통 API는 전송량 제한을 위해 KEY값을 가지고 요청하게 된다.
+ * -http 요청 헤더부분에 지정한 헤더명으로 등록해야한다.
+ */
+document.querySelector("#btn5").addEventListener('click',()=>{
+    const url ='https://api.thecatapi.com/v1/images/search';
+
+    //axios(url,options)
+    axios(url,{
+        headers:{
+             'x-api-key' : 'live_z0Mp4rmp5HzOmkvP1QgrblRCthRMdEC7pt0qkpUvT41bRccputoF97oXTcVZp0RQ' 
+        },
+        //한장씩,풀사이즈로.
+        params:{
+            limit:1,
+            size:'full'
+            }  
+        })
+    .then((response)=>{
+        console.log(response);
+        //response > data >[{url}]
+        const {data:[{url}]} = response;
+        console.log(url);
+        const img = document.createElement('img'); 
+        img.src = url;
+        img.style='width:200px;';
+        //appendchild,append모두 가능
+        const wrapper = document.querySelector(".cat-wrapper");
+        wrapper.innerHTML='';//초기화
+        wrapper.appendChild(img);
     })
 });

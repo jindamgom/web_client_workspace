@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>저를 확인하세요...😎</title>
+</head>
+<body>
+  <h1>저를 확인하세요...😎</h1>
+  <input type="checkbox" id="popup_checked">
+  <label for="popup_checked">다시 보지 않기</label>
+  <br><br>
+  <pre id='result'></pre>
+  <Button value=" 창닫기" onClick='self.close()'>종료</Button>
+  <script>
+	// 체크박스 change 핸들러 작성
+    //기본적으로 false상태 체크를 해야만 true지정.
+    localStorage.setItem('check',JSON.stringify(false));
+    //1.체크박스 체크 할때마다
+    document.querySelector("#popup_checked").onclick = () =>
+    {
+        console.log("체크박스 클릭");
+        //2.체크 여부 확인
+        const is_checked = document.querySelector("#popup_checked").checked;
+        //3.확인용
+        document.getElementById('result').innerText = is_checked;
+        localStorage.setItem('check',JSON.stringify(is_checked));
+    };
+  </script>
+</body>
+</html>

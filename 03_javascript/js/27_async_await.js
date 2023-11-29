@@ -34,7 +34,7 @@ const foo = () => new Promise((resolve)=>resolve(100));
 
 document.querySelector('#btn2').addEventListener('click',async()=>{
 //  bar().then((value)=>console.log(value));
-    const value = await bar();
+    const value = await bar(); 
 });
 
 const bar = () =>new Promise((resolve)=>{

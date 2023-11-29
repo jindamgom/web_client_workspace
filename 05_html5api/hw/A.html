@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@실습문제 - 팝업확인</title>
+</head>
+<body>
+  <h1>@실습문제 - 팝업확인</h1>
+  <script>
+	// 팝업창 띄우기
+    //window.open(url,name,spec);
+    //localStorage에 저장된 값을 확인해서 팝업유무를 가린다.
+    const popupOpen = JSON.parse(localStorage.getItem('check'));
+    console.log(popupOpen); //false:팝업 true:팝업x
+    if(!popupOpen)
+    {
+        window.open("B.html","귀찮은 팝업",
+        'width=500,height=300,top=400,left=400');
+    }
+    else
+    {
+        console.log('팝업하지않는다.');
+    }
+  </script>
+</body>
+</html>

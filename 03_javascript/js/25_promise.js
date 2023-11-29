@@ -97,7 +97,7 @@ document.querySelector("#btn4").addEventListener('click',()=>{
     }).then((value)=>{
         //콜백처리
         console.log(value);//2
-        return value*2; //명시적반환
+        return value*2; 
     }).then((value)=>{
         console.log(value);//4
         return value*10;
@@ -109,7 +109,7 @@ document.querySelector("#btn4").addEventListener('click',()=>{
     template(3)
     .then((value)=>{
         console.log(value);
-        return template(value*2);//명시적
+        return template(value*2);//명시적으로 promise에 리턴
     })
     .then((value)=>{
         console.log(value);

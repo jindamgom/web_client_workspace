@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5API | WebStorage</title>
+    <!-- 
+        스크립트 태그의 2번째 최적화 자리,
+        하지만 button click event가 있다면 
+        01_webstorage.js:18 Uncaught TypeError: 
+        Cannot set properties of null (setting 'onclick')
+        와 같은 에러가 발생 할 수 있다.
+        그런 경우, src 속성 앞에 defer(뜻:연기)를 붙이면 오류가 발생하지 않는다.
+    -->
+    <script defer src="js/01_webstorage.js"></script>
+    <script>
+        window.onload = () =>{
+            //dom tree가 모두 load된 이 후 실행. 
+            //꼭 window.onload 이벤트에 함수를 작성해야 오류가 발생하지 않는다.
+            renderGuestBooks();
+        }    
+    </script>
+    <style>
+        table{
+            border:1px solid hotpink;
+            border-collapse: collapse;
+            margin: 20px auto;
+            width:80vw;
+        }
+        th,td{
+            border:1px solid hotpink;
+            padding: 5px;
+        }
+        table input[type=text]{
+            width:90%;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebStorage</h1>
+
+    <h2>CRUD</h2>
+    <fieldset>
+        <legend>LocalStorage</legend>
+        <input type="text" id="key" placeholder="key를 입력하세요.">
+        <input type="text" id="value" placeholder="value를 입력하세요.">
+        <hr>
+        <button id="btn1">저장</button>
+        <button id="btn2">조회</button>
+        <button id="btn3">삭제</button>
+        <button id="btn4">전체삭제</button>
+    </fieldset>
+
+    <h2>객체/배열 저장</h2>
+    <button id="btn5">저장</button>
+
+    <h2>방명록</h2>
+    <form name="guestbookFrm" action="javascript:saveGuestbook();">
+        <table>
+            <tr>
+                <th><label for="name">이름</label></th>
+                <td>
+                    <input type="text" name="name" id="name" placeholder="이름을 작성하세요..">
+                </td>
+            </tr>
+            <tr>
+                <th><label for="content">내용</label></th>
+                <td>
+                    <input type="text" name="content" id="content" placeholder="내용을 작성하세요..">
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="submit" value="저장">
+
+                </th>
+            </tr>
+        </table>
+    </form>
+    <button id="btn10">방명록 불러오기</button>
+    <table id="tb-guestbook">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>내용</th>
+                <th>작성일시</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+
+    <!-- <script src="js/01_webstorage.js"></script> -->
+</body>
+</html>
