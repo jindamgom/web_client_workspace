@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery | event</title>
+    <style>
+        .outer{
+            width:200px;
+            height:200px;
+            background-color: orange;
+            padding:50px;
+            margin : 20px auto;
+        }
+        .inner{
+            width:100%;
+            height:100%;
+            background-color: orangered;
+        }
+        .reverse{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">event</h1> 
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+    <button id="counter">10</button>
+    <button id="one">1</button>
+    <button id="trg">trigger🔫</button>
+
+
+    <form action="javascript:alert('제출성공!');" name="memoFrm">
+        <filedset>
+            <legend>메모작성</legend>
+            <p><span id="len">0</span>/30</p>
+            <!--기존입력값 컨텐츠 영역에 작성, 작성한 값 참조 value속성-->
+            <textarea
+                name="memo"
+                id="memo"
+                cols="30"
+                rows="10"
+                placeholder="메모를 작성하세요(30자 이내)"></textarea>
+        </filedset>
+        <input type="submit" value="제출">
+    </form>
+
+    <!--
+        #memo를 작성하면, 실시간으로 글자수가 #len에 반영된다.
+        30글자가 넘어가면 #len은 빨간글씨가 되고, 제출을 할 수 없어야한다.
+
+    -->
+
+
+    <!-- 순서 지키기-->
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/05_event.js"></script>
+</body>
+</html>

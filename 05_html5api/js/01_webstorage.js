@@ -187,7 +187,6 @@ const saveGuestbook = () =>{
     guestbooks.push(new GuestBook(name.value,content.value));
     localStorage.setItem('guestbooks',JSON.stringify(guestbooks));
 
-    
     frm.reset();//초기화
     renderGuestBooks(); //방명록 출력
 };
