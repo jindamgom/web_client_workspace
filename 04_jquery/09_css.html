@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery | CSS</title>
+    <style>
+        div.wrapper{
+            margin-top: 50px;
+            width:300px;
+            height:200px;
+            padding:5px;
+            overflow:hidden;
+        }
+        div.menu {
+            width:300px;
+            height:30px;
+            background:yellowgreen;
+            color:orangered;
+            border-radius:10px;
+            text-align:center;
+            border:1px solid green;
+            cursor:pointer;
+        }
+        p.content {
+            border:1px solid lightgray;
+            width:300px;
+            height:200px;
+            /* display:none; */
+        }
+        #flower2
+        {
+            width:100%;
+            opacity: .5;
+        }
+        </style>
+
+</head>
+<body>
+    <h1>CSS</h1>
+    <div>
+        <img id="river1" src="../sample/image/river1.PNG" alt="">
+    </div>
+    <button id="btn1">show</button>
+    <button id="btn2">hide</button>
+
+    <div class="wrapper">
+    <div class="menu">첫 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">두 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">세 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">네 번째 메뉴</div>
+    <p class="content">내용</p>
+    <div class="menu">다섯 번째 메뉴</div>
+    <p class="content">내용</p>
+    </div>
+    <button id="btn3">slide down</button>
+    <button id="btn4">slide up</button>
+
+    <div class = "wrapper">
+        <img src="../sample/image/flower1.PNG" alt="" id="flower1" style="hegiht:100%;">
+    </div>
+    <button id="btn5">fade in</button>
+    <button id="btn6">fade out</button>
+
+    <div class = "wrapper">
+        <img src="../sample/image/flower2.PNG" alt="" id="flower2" style="hegiht:100%;">
+    </div>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/09_css.js"></script>
+</body>
+</html>

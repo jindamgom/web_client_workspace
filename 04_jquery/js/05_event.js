@@ -33,7 +33,10 @@ $(title).hover((e)=>{
 },(e)=>{
     $(e.target).removeClass('reverse');
 });
-
+/**
+ * on 핸들러 바인딩 (붙이고)
+ * off 핸들러 언바인딩 (뗀다)
+ */
 $(counter).on('click',(e)=>{
     let n = $(e.target).html();
     $(e.target).html(--n);
