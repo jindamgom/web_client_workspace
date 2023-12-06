@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailwindCSS | Box Model</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwindcss.config.js"></script>
+</head>
+<body>
+    <h1 class="text-3x1 my-4">Box Model</h1>
+    <!--
+        width
+        height
+        padding
+        border
+        margin
+        
+    -->
+    <!--원본색상에 제일 가까운 수치 600-->
+    <!--w-[100px]-->
+    <!--r+l=x t+b=y p는 4방향-->
+    <div class="bg-green-600 w-80 h-80 py-4 border-4 border-red-500 border-dashed shadow-md hover:shadow-lg hover:shadow-black">Hello</div>
+
+    <!--div .w-40.h-40.bg-sky-600.m-4-->
+    <div class="w-40 h-40 bg-sky-600 m-4 rounded-full"></div>
+
+</body>
+</html>

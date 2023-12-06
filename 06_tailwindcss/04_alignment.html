@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailwindCSS | Alignment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwindcss.config.js"></script>
+</head>
+<body>
+    <h1 class="text-3xl my-4">Alignment</h1>
+
+    <!--1.글자만 가운데 정렬됨-->
+    <div class="bg-slate-400 text-center">
+        <span class="bg-pink-400">가운데</span>
+        <img src="/sample/image/tower1.PNG" class="w-40" alt="">
+    </div>
+
+    <!--2.이미지도 같이 정렬-->
+    <!--flex : justify-content(메인축), align-items(크로스축)-->
+    <div class="bg-slate-400 flex flex-col items-center">
+        <span class="bg-pink-400">가운데</span>
+        <img src="/sample/image/tower1.PNG" class="w-40" alt="">
+    </div>
+
+    <!--block 요소 정렬-->
+    <div class="bg-rose-600 w-40 h-40"></div>
+    <div class="bg-rose-600 w-40 h-40 mx-auto"></div>
+    <div class="bg-rose-600 w-40 h-40 ml-auto""></div>
+
+
+</body>
+</html>

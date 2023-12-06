@@ -144,6 +144,7 @@ $(btn10).click(()=>{
 /**
  * 부모방향
  * []:옵션 
+ *  js에서는 이렇게 다룰 수 없음 jQuery강점
  * -parent([selector]) :직계 부모
  * -parents([selector]) : 조상
  * -parentUntil(selector) : 특정 태그전까지 모든 조상
@@ -184,6 +185,7 @@ $(btn12).click(()=>{
 });
 
 /**
+ * js에서는 nextsiblings으로 하나씩 찾아야했는데 jQuery에서는 모든 형제 요소를 찾을 수 있음..
  * 형제 방향
  * -siblings ([selector]) 이전/다음 모든 형제
  * 

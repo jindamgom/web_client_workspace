@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tailwindcss | Responsive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwindcss.config.js"></script>
+    <link rel="stylesheet" href="10_dot.css">
+
+</head>
+<body>
+    <h1 class="text-3xl my-4">Responsive</h1>
+    <!--
+        css @media 쿼리 : 기기의 width값에 근거해서 다른 css 적용한다.
+        아무것도 적지않으면 기본값 하나로만 적용되고,
+        sm하나라도 쓴다면 기본값/sm값으로 구분됨.
+
+        -기본값: ~640px
+        -sm: 640px ~ 
+        -md: 768px~
+        -lg: 1024px~
+        -xl: 1280px~
+        -2xl: 1536px~
+
+    -->
+    <!--기본 회색이지만, 640px넘는 순간 red로바꾸기-->
+    <div class="w-10/12 h-96 mx-auto bg-slate-400 sm:bg-red-400 md:bg-yellow-400 lg:bg-green-400"></div>
+
+    <div class="ghost-container">
+        <div class="ghost"></div>
+    </div>
+
+
+
+</body>
+</html>
